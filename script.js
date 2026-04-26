@@ -51,7 +51,23 @@ const people3 = [
     ]
 
 function findTheOldest (people){
-    return people.reduce(function(accumulator, item){
+    let improvedArray = people.map(function (item){
+        const d = new Date();
+        let currentYear = d.getFullYear();
 
-    }, {});
+        if (!("yearOfBirth" in item)){
+
+            item.yearOfBirth = currentYear;
+        }
+
+        if (!("yearOfDeath" in item)){
+
+            item.yearOfDeath = currentYear;
+        }
+
+        return item;
+    })
+    return improvedArray;
 }
+
+console.log(findTheOldest(people3));
