@@ -51,7 +51,7 @@ const people3 = [
     ]
 
 function findTheOldest (people){
-    let improvedArray = people.map(function (item){
+    let improvedArray = people.map(function (item){ // to fill in the missing yearOfBirth or yearOfDeath
         const d = new Date();
         let currentYear = d.getFullYear();
 
@@ -68,12 +68,12 @@ function findTheOldest (people){
         return item;
     });
 
-    let sortedArray = improvedArray.sort(function(a, b){
+    let sortedArray = improvedArray.sort(function(a, b){ // after filling the missing property, sort the array from youngest to oldest
 
       return (Math.abs(a.yearOfBirth - a.yearOfDeath)) - (Math.abs(b.yearOfBirth - b.yearOfDeath));
     });
 
-    let oldestObjectPerson = sortedArray[sortedArray.length - 1];
+    let oldestObjectPerson = sortedArray[sortedArray.length - 1]; // get the last index of the array because it is the oldest one.
     return oldestObjectPerson;
 }
 
