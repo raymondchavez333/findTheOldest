@@ -72,7 +72,9 @@ function findTheOldest (people){
 
       return (Math.abs(a.yearOfBirth - a.yearOfDeath)) - (Math.abs(b.yearOfBirth - b.yearOfDeath));
     });
-    return sortedArray;
+
+    let oldestObjectPerson = sortedArray[sortedArray.length - 1];
+    return oldestObjectPerson;
 }
 
 console.log(findTheOldest(people3));
