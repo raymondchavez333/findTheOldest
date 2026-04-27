@@ -67,7 +67,11 @@ function findTheOldest (people){
 
         return item;
     })
-    return improvedArray;
+    let firstPerson = improvedArray[0];
+    // let oldestAge = improvedArray.reduce(function(accumulator, item){
+      
+    // }, []);
+    return firstPerson;
 }
 
 console.log(findTheOldest(people3));
