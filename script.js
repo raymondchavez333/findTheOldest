@@ -66,12 +66,13 @@ function findTheOldest (people){
         }
 
         return item;
-    })
-    let firstPerson = improvedArray[0];
-    // let oldestAge = improvedArray.reduce(function(accumulator, item){
-      
-    // }, []);
-    return firstPerson;
+    });
+
+    let sortedArray = improvedArray.sort(function(a, b){
+
+      return (Math.abs(a.yearOfBirth - a.yearOfDeath)) - (Math.abs(b.yearOfBirth - b.yearOfDeath));
+    });
+    return sortedArray;
 }
 
 console.log(findTheOldest(people3));
